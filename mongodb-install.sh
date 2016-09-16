@@ -46,3 +46,4 @@ echo 'rm /opt/apache-tomcat-7.0.70/webapps/ProvAppCLService.war' >> /home/vagran
 echo 'sleep 30s' >> /home/vagrant/redeploy.sh
 echo 'wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AACd2fo8qBp_3VwwC1PSC3aMa/ProvAppCLService.war?dl=0 -o /opt/apache-tomcat-7.0.70/webapps/ProvAppCLService.war ' >> /home/vagrant/redeploy.sh
 
+chmod u+x /home/vagrant/redeploy.sh
