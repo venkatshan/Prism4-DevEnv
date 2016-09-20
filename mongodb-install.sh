@@ -26,24 +26,24 @@ chmod u+x /etc/init.d/mongoser.sh
 /etc/init.d/mongoser.sh
 
 echo 'Downlaod and install tomcat server'
-wget http://apache.mirrors.tds.net/tomcat/tomcat-7/v7.0.70/bin/apache-tomcat-7.0.70.tar.gz 
+wget http://apache.mirrors.tds.net/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz 
 
-tar xvfz apache-tomcat-7.0.70.tar.gz -C /opt
+tar xvfz apache-tomcat-7.0.72.tar.gz -C /opt
 
-wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AAD3X_wO2kSUuXj5FRcqEJRva/ojdbc6-11.2.0.3.0.jar?dl=1 -O /opt/apache-tomcat-7.0.70/lib/ojdbc6-11.2.0.3.0.jar
-wget http://repo2.maven.org/maven2/com/h2database/h2/1.4.192/h2-1.4.192.jar -O /opt/apache-tomcat-7.0.70/lib/h2-1.4.192.jar
+wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AAD3X_wO2kSUuXj5FRcqEJRva/ojdbc6-11.2.0.3.0.jar?dl=1 -O /opt/apache-tomcat-7.0.72/lib/ojdbc6-11.2.0.3.0.jar
+wget http://repo2.maven.org/maven2/com/h2database/h2/1.4.192/h2-1.4.192.jar -O /opt/apache-tomcat-7.0.72/lib/h2-1.4.192.jar
 
-wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AACd2fo8qBp_3VwwC1PSC3aMa/ProvAppCLService.war?dl=0 -O /opt/apache-tomcat-7.0.70/webapps/ProvAppCLService.war
+wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AACd2fo8qBp_3VwwC1PSC3aMa/ProvAppCLService.war?dl=0 -O /opt/apache-tomcat-7.0.72/webapps/ProvAppCLService.war
 
 echo '#!/bin/bash' > /etc/init.d/tomcat.sh
-echo '/opt/apache-tomcat-7.0.70/bin/catalina.sh start' >> /etc/init.d/tomcat.sh
+echo '/opt/apache-tomcat-7.0.72/bin/catalina.sh start' >> /etc/init.d/tomcat.sh
 chmod u+x /etc/init.d/tomcat.sh
 
 /etc/init.d/tomcat.sh
 
 echo '#!/bin/bash' > /home/vagrant/redeploy.sh
-echo 'rm /opt/apache-tomcat-7.0.70/webapps/ProvAppCLService.war' >> /home/vagrant/redeploy.sh
+echo 'rm /opt/apache-tomcat-7.0.72/webapps/ProvAppCLService.war' >> /home/vagrant/redeploy.sh
 echo 'sleep 30s' >> /home/vagrant/redeploy.sh
-echo 'wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AACd2fo8qBp_3VwwC1PSC3aMa/ProvAppCLService.war?dl=0 -o /opt/apache-tomcat-7.0.70/webapps/ProvAppCLService.war ' >> /home/vagrant/redeploy.sh
+echo 'wget https://www.dropbox.com/sh/u9soo7b8ael8vjg/AACd2fo8qBp_3VwwC1PSC3aMa/ProvAppCLService.war?dl=0 -o /opt/apache-tomcat-7.0.72/webapps/ProvAppCLService.war ' >> /home/vagrant/redeploy.sh
 
 chmod u+x /home/vagrant/redeploy.sh
